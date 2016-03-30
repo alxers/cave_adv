@@ -22,7 +22,7 @@ var SIZE = 64;
 
 render();
 
-//TODO: render
+//TODO: display plain text instead of images
 
 function render() {
 
@@ -30,9 +30,7 @@ function render() {
     // from the previous turn
     if (stage.hasChildNodes()) {
         for (var i = 0; i < ROWS * COLS; i++) {
-            stage.removeChild(stage.firstChild) {
-
-            }
+            stage.removeChild(stage.firstChild);
         }
     }
 
