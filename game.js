@@ -2,11 +2,11 @@ var stage = document.querySelector('#stage');
 var output = document.querySelector('#output');
 
 var map = [
-            [0, 2, 0, 0, 0, 3],
+            [0, 0, 0, 0, 0, 3],
             [0, 0, 0, 1, 0, 0],
             [0, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 2, 0],
-            [0, 2, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0],
             [0, 0, 0, 0, 0, 0],
           ];
 
@@ -37,19 +37,20 @@ function render() {
     // Render the game
     for (var row = 0; row < ROWS; row++) {
         for (var col = 0; col < COLS; col++) {
-            var cell = document.createElement('img');
+            var cell = document.createElement('div');
             cell.setAttribute('class', 'cell');
+            cell.innerHTML = 'C';
             stage.appendChild(cell);
 
             // Find the correct image for this map cell
             switch(map[row][col]) {
                 case FLOOR:
-                    cell.src = '../images/floor.png';
+                    cell.innerHTML = '.';
                     break;
                 case GOLD:
-                    cell.src = '../images/gold.png';
+                    cell.innerHTML = 'G';
                 case HOME:
-                    cell.src = '../images/home.png'
+                    cell.innerHTML = 'E'
             }
 
             // Position the cell
