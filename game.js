@@ -39,7 +39,7 @@ function render() {
         for (var col = 0; col < COLS; col++) {
             var cell = document.createElement('div');
             cell.setAttribute('class', 'cell');
-            cell.innerHTML = 'C';
+            // cell.innerHTML = 'C';
             stage.appendChild(cell);
 
             // Find the correct image for this map cell
@@ -49,13 +49,15 @@ function render() {
                     break;
                 case GOLD:
                     cell.innerHTML = 'G';
+                    break;
                 case HOME:
-                    cell.innerHTML = 'E'
+                    cell.innerHTML = 'E';
+                    break;
             }
 
             // Position the cell
             cell.style.top = row * SIZE + 'px';
-            cell.style.left = row * SIZE + 'px';
+            cell.style.left = col * SIZE + 'px';
 
         }
     }
