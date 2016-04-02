@@ -39,10 +39,8 @@ function render() {
         for (var col = 0; col < COLS; col++) {
             var cell = document.createElement('div');
             cell.setAttribute('class', 'cell');
-            // cell.innerHTML = 'C';
             stage.appendChild(cell);
 
-            // Find the correct image for this map cell
             switch(map[row][col]) {
                 case FLOOR:
                     cell.innerHTML = '.';
