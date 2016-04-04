@@ -10,8 +10,21 @@ var map = [
             [0, 0, 0, 0, 0, 0],
           ];
 
+var gameObjects = [
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [4, 0, 0, 0, 0, 0],
+          ];
+
+var playerRow;
+var playerCol;
+
 var FLOOR = 0;
 var GOLD = 1;
+var PLAYER = 4;
 // Exit, not Home?
 var HOME = 3;
 
@@ -37,6 +50,12 @@ function render() {
     // Render the game
     for (var row = 0; row < ROWS; row++) {
         for (var col = 0; col < COLS; col++) {
+
+            if (gameObjects[row][col] === PLAYER) {
+                shipRow = row;
+                shipCol = col;
+            }
+
             var cell = document.createElement('div');
             cell.setAttribute('class', 'cell');
             stage.appendChild(cell);
@@ -50,6 +69,13 @@ function render() {
                     break;
                 case HOME:
                     cell.innerHTML = 'E';
+                    break;
+            }
+
+            // Add player
+            switch (gameObjects[row][col]) {
+                case PLAYER:
+                    cell.innerHTML = 'P';
                     break;
             }
 
