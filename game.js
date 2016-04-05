@@ -33,6 +33,13 @@ var COLS = map[0].length;
 
 var SIZE = 64;
 
+// Keys handler
+var UP = 38;
+var DOWN = 40;
+var RIGHT = 39;
+var LEFT = 37;
+document.addEventListener('keydown', function() {}, false);
+
 render();
 
 //TODO: display plain text instead of images
