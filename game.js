@@ -38,7 +38,21 @@ var UP = 38;
 var DOWN = 40;
 var RIGHT = 39;
 var LEFT = 37;
-document.addEventListener('keydown', function() {}, false);
+document.addEventListener('keydown', keydownHandler(e), false);
+
+function keydownHandler(e) {
+    switch (e.keyCode) {
+        case UP:
+            // Move ship up one row
+            break;
+        case DOWN:
+            break;
+        case LEFT:
+            break;
+        case RIGHT:
+            break;
+    }
+}
 
 render();
 
