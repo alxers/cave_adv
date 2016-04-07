@@ -43,15 +43,39 @@ document.addEventListener('keydown', keydownHandler(e), false);
 function keydownHandler(e) {
     switch (e.keyCode) {
         case UP:
-            // Move ship up one row
+            // If player's move within the field
+            if (playerRow > 0) {
+                // Clear current cell
+                gameObjects[playerRow][playerCol] = 0;
+                // Move up one row
+                playerRow--;
+                gameObjects[playerRow][playerCol] = PLAYER;
+            }
             break;
         case DOWN:
+            if (playerRow < ROWS - 1) {
+                gameObjects[playerRow][playerCol] = 0;
+                playerRow++;
+                gameObjects[playerRow][playerCol] = PLAYER;
+            }
             break;
         case LEFT:
+            if (playerCol > 0) {
+                gameObjects[playerRow][playerCol] = 0;
+                playerCol--;
+                gameObjects[playerRow][playerCol] = PLAYER;
+            }
             break;
         case RIGHT:
+            if (playerCol < COLS - 1) {
+                gameObjects[playerRow][playerCol] = 0;
+                playerCol++;
+                gameObjects[playerRow][playerCol] = PLAYER;
+            }
             break;
     }
+
+    render();
 }
 
 render();
