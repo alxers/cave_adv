@@ -75,6 +75,18 @@ function keydownHandler(e) {
             break;
     }
 
+    switch (map[playerRow][playerCol]) {
+        case FLOOR:
+            console.log('floor');
+            break;
+        case GOLD:
+            console.log('gold');
+            break;
+        case HOME:
+            console.log('home');
+            break;
+    }
+
     render();
 }
 
