@@ -27,6 +27,7 @@ var GOLD = 1;
 var PLAYER = 4;
 // Exit, not Home?
 var HOME = 3;
+var ENEMY = 2;
 
 var ROWS = map.length;
 var COLS = map[0].length;
@@ -82,8 +83,11 @@ function keydownHandler(e) {
         case GOLD:
             console.log('gold');
             break;
+        case ENEMY:
+            fight();
+            break;
         case HOME:
-            console.log('home');
+            nextLevel();
             break;
     }
 
