@@ -19,9 +19,6 @@ var gameObjects = [
             [4, 0, 0, 0, 0, 0],
           ];
 
-var playerRow;
-var playerCol;
-
 var FLOOR = 0;
 var GOLD = 1;
 var PLAYER = 4;
@@ -39,7 +36,21 @@ var UP = 38;
 var DOWN = 40;
 var RIGHT = 39;
 var LEFT = 37;
-document.addEventListener('keydown', keydownHandler(e), false);
+
+// Find player's start position
+var playerRow;
+var playerCol;
+
+for (var row = 0; row < ROWS; row++) {
+    for (var col = 0; col < COLS; col++) {
+        if (gameObjects[row][col] === PLAYER) {
+            playerRow = row;
+            playerCol = col;
+        }
+    }
+}
+
+document.addEventListener('keydown', keydownHandler, false);
 
 function keydownHandler(e) {
     switch (e.keyCode) {
