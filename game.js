@@ -19,6 +19,8 @@ var gameObjects = [
             [4, 0, 0, 0, 0, 0],
           ];
 
+// Use 'Life' instead of gold
+// add enemies
 var FLOOR = 0;
 var GOLD = 1;
 var PLAYER = 4;
@@ -40,6 +42,10 @@ var LEFT = 37;
 // Find player's start position
 var playerRow;
 var playerCol;
+
+// Game variables
+var gold = 10;
+var experience = 0;
 
 for (var row = 0; row < ROWS; row++) {
     for (var col = 0; col < COLS; col++) {
