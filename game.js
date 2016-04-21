@@ -111,9 +111,11 @@ function keydownHandler(e) {
     render();
 }
 
-render();
+function fight() {
+    // Define enemy strength (life points)
+}
 
-//TODO: display plain text instead of images
+render();
 
 function render() {
 
