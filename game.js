@@ -131,10 +131,11 @@ function render() {
     for (var row = 0; row < ROWS; row++) {
         for (var col = 0; col < COLS; col++) {
 
-            if (gameObjects[row][col] === PLAYER) {
-                shipRow = row;
-                shipCol = col;
-            }
+            // We don't need this?
+            // if (gameObjects[row][col] === PLAYER) {
+            //     playerRow = row;
+            //     playerCol = col;
+            // }
 
             var cell = document.createElement('div');
             cell.setAttribute('class', 'cell');
